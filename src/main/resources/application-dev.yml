@@ -1,2 +1,21 @@
 server:
   port: 9000
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    cache: false
+    charset: utf-8
+    allow-request-override: false
+    allow-session-override: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: true
+#    prefix:                                               #在构建URL时添加前缀
+    request-context-attribute: request                    #在 ftl 中使用 request.contextPath
+    settings:
+    suffix: .ftl
+#    view-names:
