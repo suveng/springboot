@@ -16,6 +16,6 @@ spring:
     prefer-file-system-access: true
 #    prefix:                                               #在构建URL时添加前缀
     request-context-attribute: request                    #在 ftl 中使用 request.contextPath
-    settings:
+    settings: {"date_format":"yyyy-MM-dd","datetime_format":"yyyy-MM-dd HH:mm:ss"}
     suffix: .ftl
 #    view-names:
