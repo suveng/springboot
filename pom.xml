@@ -21,6 +21,7 @@
         <mysql-connector-java.version>5.1.44</mysql-connector-java.version>
         <jedis.version>2.9.0</jedis.version>
         <joda-time.version>2.9.9</joda-time.version>
+        <mybatis-plus-boot-starter.version>3.0.7.1</mybatis-plus-boot-starter.version>
     </properties>
 
     <dependencies>
@@ -72,6 +73,11 @@
         </dependency>
         <!--##########数据库#################-->
         <!--mybatis-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus-boot-starter.version}</version>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
