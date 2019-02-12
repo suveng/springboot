@@ -4,6 +4,7 @@ package my.suveng.springboot.user.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import my.suveng.springboot.common.entity.BaseEntity;
 
 /**
  * <p>
