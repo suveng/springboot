@@ -11,6 +11,9 @@
 
     <artifactId>custom</artifactId>
 
+    <properties>
+        <lombok.version>1.18.4</lombok.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>my.suveng</groupId>
@@ -22,6 +25,12 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot-starter.version}</version>
+        </dependency>
+        <!--###############lombok################-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 </project>
