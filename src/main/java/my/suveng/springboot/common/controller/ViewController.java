@@ -1,4 +1,4 @@
-package my.suveng.springboot.controller;
+package my.suveng.springboot.common.controller;
 
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Controller;

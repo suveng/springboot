@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2018-08-10
  */
 @Configuration
-@MapperScan("my.suveng.springboot.dao.mapper")
+@MapperScan("my.suveng.springboot.*.mapper")
 public class MybatisPlusConfig {
 
 }
