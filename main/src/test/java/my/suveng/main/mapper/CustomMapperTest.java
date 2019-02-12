@@ -9,10 +9,7 @@ import my.suveng.main.SpringbootApplicationTests;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author 苏文广 created at 2019/2/12
@@ -26,16 +23,16 @@ public class CustomMapperTest extends SpringbootApplicationTests {
     /**
      * int insert(T entity);
      */
-    @Test
-    public void testInsert() {
-        Custom entity = new Custom();
-        entity.setCustomId(20000);//因为id 是自增的所以设置了主键也不生效
-        entity.setName("suveng");
-        entity.setPhone("22222222");
-        entity.setTtAccount("wytrerte3");//这个字段有唯一索引
-        int insert = customMapper.insert(entity);
-        System.out.println(insert);
-    }
+//    @Test
+//    public void testInsert() {
+//        Custom entity = new Custom();
+//        entity.setCustomId(20000);//因为id 是自增的所以设置了主键也不生效
+//        entity.setName("suveng");
+//        entity.setPhone("22222222");
+//        entity.setTtAccount(new UUID(32L, 16L).toString());//这个字段有唯一索引
+//        int insert = customMapper.insert(entity);
+//        System.out.println(insert);
+//    }
 
     /**
      * int deleteById(Serializable id);
