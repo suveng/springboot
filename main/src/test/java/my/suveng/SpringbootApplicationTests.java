@@ -1,4 +1,4 @@
-package my.suveng.main;
+package my.suveng;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

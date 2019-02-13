@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import my.suveng.custom.entity.Custom;
 import my.suveng.custom.mapper.CustomMapper;
-import my.suveng.main.SpringbootApplicationTests;
+import my.suveng.SpringbootApplicationTests;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

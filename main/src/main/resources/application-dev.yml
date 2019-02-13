@@ -24,8 +24,11 @@ spring:
     url: jdbc:mysql://localhost:3306/mp?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
     username: root
     password: root
-#mp 配置
+# Mybatis-Plus 配置
 mybatis-plus:
   configuration:
-    #打印sql语句,调试用
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: true #配置的缓存的全局开关
+    lazyLoadingEnabled: true #延时加载的开关
+    multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
