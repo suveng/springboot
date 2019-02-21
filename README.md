@@ -1,6 +1,6 @@
 # Springboot learning and scaffolding
 
-[简体中文版]() || English
+[简体中文版](https://github.com/suveng/springboot/blob/base/README-zh.md) || English
 
 > @author suveng
 >
