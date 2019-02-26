@@ -22,7 +22,7 @@
         <jedis.version>2.9.0</jedis.version>
         <joda-time.version>2.9.9</joda-time.version>
         <mybatis-plus-boot-starter.version>3.0.7.1</mybatis-plus-boot-starter.version>
-        <swagger.version>2.7.0</swagger.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>

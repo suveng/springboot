@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * @author 苏文广 created at 2019/1/29
  */
-@Api(value = "kkk")
+
 @Controller
 @RequestMapping("/view")
 public class ViewController extends BaseController {
