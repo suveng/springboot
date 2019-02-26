@@ -14,6 +14,7 @@
     <name>springboot</name>
     <description>suveng's spring boot</description>
 
+
     <properties>
         <spring-boot-starter-parent.version>2.1.2.RELEASE</spring-boot-starter-parent.version>
         <java.version>1.8</java.version>
@@ -24,7 +25,13 @@
         <mybatis-plus-boot-starter.version>3.0.7.1</mybatis-plus-boot-starter.version>
         <swagger.version>2.9.2</swagger.version>
     </properties>
-
+    <repositories>
+        <repository>
+            <id>oschina</id>
+            <name>oschina Repository</name>
+            <url>https://maven.oschina.net/content/groups/public</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -90,6 +97,7 @@
         </dependency>
 
     </dependencies>
+
 
     <build>
         <plugins>

@@ -27,7 +27,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("my.suveng.springboot.view.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build().useDefaultResponseMessages(false);
     }
 
     private ApiInfo apiInfo() {
