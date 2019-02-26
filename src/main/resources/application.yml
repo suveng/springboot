@@ -1,6 +1,9 @@
 spring:
   profiles:
-    active: dev
+    active:
+
 server:
   servlet:
     context-path: /springboot
+
+

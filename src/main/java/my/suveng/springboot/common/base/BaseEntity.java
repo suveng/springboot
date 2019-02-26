@@ -1,4 +1,4 @@
-package my.suveng.springboot.common.entity;
+package my.suveng.springboot.common.base;
 
 
 import lombok.Data;

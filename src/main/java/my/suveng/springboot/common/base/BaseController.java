@@ -1,4 +1,4 @@
-package my.suveng.springboot.common.controller;
+package my.suveng.springboot.common.base;
 
 /**
  * @author 苏文广 created at 2019/1/29
