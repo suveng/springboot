@@ -3,7 +3,7 @@ package my.suveng.springboot.custom.mapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import my.suveng.springboot.SpringbootApplicationTests;
+import my.suveng.springboot.ServerApplicationTests;
 import my.suveng.springboot.custom.entity.Custom;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.Map;
  * @author 苏文广 created at 2019/2/12
  * 测试mapper crud接口
  */
-public class CustomMapperTest extends SpringbootApplicationTests {
+public class CustomMapperTest extends ServerApplicationTests {
     @Autowired
     private CustomMapper customMapper;
 
@@ -229,7 +229,7 @@ public class CustomMapperTest extends SpringbootApplicationTests {
         System.out.println(maps);
     }
 
-    
+
     /**
      * List<Object> selectObjs(@Param(Constants.WRAPPER) Wrapper<T> queryWrapper); 只返回第一个字段的值
      **/
