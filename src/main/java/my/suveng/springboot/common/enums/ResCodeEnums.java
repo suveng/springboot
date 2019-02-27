@@ -7,7 +7,21 @@ package my.suveng.springboot.common.enums;
  * description: 返回状态码
  **/
 public enum ResCodeEnums {
-    SIMPLE_SUCCESS(200,"请求成功"),UNKNOWN_ERROR(100000,"未知错误"),SIMPLE_ERROR(100001,"请求失败");
+    /**
+     * 请求成功
+     */
+    SIMPLE_SUCCESS(200,"请求成功"),
+
+    /**
+     * 未知错误
+     **/
+    UNKNOWN_ERROR(100000,"未知错误"),
+
+    /**
+     * 请求失败
+     **/
+    SIMPLE_ERROR(100001,"请求失败")
+    ;
     /**
      * 系统状态码
      */
