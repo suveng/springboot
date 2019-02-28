@@ -33,13 +33,13 @@ public class CostTimeAspect {
      */
     @Around(value = "anyMethod() && @annotation(costTime)", argNames = "pjp,costTime")
     public Object aroundMethod(ProceedingJoinPoint pjp, CostTime costTime) {
-        log.info("开始执行");
+        log.info("#############【{}】开始执行!",pjp.getSignature().toString());
         DateTime start = DateTime.now();
         try {
             Object res = pjp.proceed();
             DateTime end = DateTime.now();
             long cost = new Duration(start, end).getMillis();
-            log.info("{}:执行完成,耗时：{}", pjp.getSignature().toString(), cost);
+            log.info("#############【{}】:执行完成,耗时：【{}】", pjp.getSignature().toString(), cost);
             return res;
         } catch (Throwable throwable) {
             log.error("方法【{}】执行异常！",pjp.getSignature().getDeclaringTypeName());
