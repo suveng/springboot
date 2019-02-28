@@ -38,7 +38,7 @@ public class CostTimeAspect {
         try {
             Object res = pjp.proceed();
             DateTime end = DateTime.now();
-            long cost = new Duration(start, end).getMillis();
+            long cost = new Duration(dstart, end).getMillis();
             log.info("#############【{}】:执行完成,耗时：【{}】", pjp.getSignature().toString(), cost);
             return res;
         } catch (Throwable throwable) {
