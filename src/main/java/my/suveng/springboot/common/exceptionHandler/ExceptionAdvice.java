@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  **/
 @ControllerAdvice
 public class ExceptionAdvice {
+
+
     @ExceptionHandler({Exception.class})
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
