@@ -22,7 +22,6 @@
         <mysql-connector-java.version>5.1.44</mysql-connector-java.version>
         <jedis.version>2.9.0</jedis.version>
         <joda-time.version>2.9.9</joda-time.version>
-        <mybatis-plus-boot-starter.version>3.0.7.1</mybatis-plus-boot-starter.version>
         <swagger.version>2.9.2</swagger.version>
     </properties>
     <repositories>
@@ -96,10 +95,26 @@
             <version>${swagger.version}</version>
         </dependency>
         <!-- swagger2 ui -->
+        <!-- swagger2 ui -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger.version}</version>
+        </dependency>
+        <!--jpa-->
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--fast json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.56</version>
         </dependency>
 
     </dependencies>

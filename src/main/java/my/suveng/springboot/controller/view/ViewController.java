@@ -1,4 +1,4 @@
-package my.suveng.springboot.view.controller;
+package my.suveng.springboot.controller.view;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

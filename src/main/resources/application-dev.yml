@@ -1,4 +1,18 @@
 spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        hbm2ddl:
+          auto: create
+        format_sql: true
   freemarker:
     template-loader-path: classpath:/templates/
     cache: false
@@ -12,18 +26,9 @@ spring:
     expose-session-attributes: false
     expose-spring-macro-helpers: true
     prefer-file-system-access: true
-#    prefix:                                               #在构建URL时添加前缀
+    #    prefix:                                               #在构建URL时添加前缀
     request-context-attribute: request                    #在 ftl 中使用 request.contextPath
     settings: {"date_format":"yyyy-MM-dd","datetime_format":"yyyy-MM-dd HH:mm:ss"}
     #    view-names:
     suffix: .ftl
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mp?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
-    username: root
-    password: root
-#mp 配置
-mybatis-plus:
-  configuration:
-    #打印sql语句,调试用
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
