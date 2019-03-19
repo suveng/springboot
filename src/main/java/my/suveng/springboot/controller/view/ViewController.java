@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import my.suveng.springboot.common.aspect.annotations.CostTime;
 import my.suveng.springboot.common.base.BaseController;
+import my.suveng.springboot.common.response.Result;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +32,7 @@ public class ViewController extends BaseController {
 
     @GetMapping("/test")
     @ApiOperation(value = "测试视图", httpMethod = "GET")
-    @ApiResponses({@ApiResponse(code = 200, message = "统一返回对象", response = HashMap.class)})
+    @ApiResponses({@ApiResponse(code = 200, message = "统一返回对象", response = Result.class)})
     @CostTime
     public String test(Model model) {
         int i = 1 / 0;
