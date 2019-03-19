@@ -1,5 +1,9 @@
 package my.suveng.springboot.modules.user.service;
 
+import my.suveng.springboot.modules.user.entity.User;
+
+import java.util.List;
+
 /**
  * @author suwenguang
  * suveng@163.com
@@ -7,5 +11,5 @@ package my.suveng.springboot.modules.user.service;
  * description:
  **/
 public interface UserService {
-    void selectList();
+    List<User> selectList();
 }

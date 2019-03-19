@@ -21,16 +21,15 @@ public class User implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-
     @Column(nullable = false)
     private String email;
     @Column(nullable = false)
-    private String nickName;
+    private String nickname;
     @Column(nullable = false)
-    private String passWord;
+    private String password;
     @Column(nullable = false)
     private String regTime;
     @Column(nullable = false)
-    private String userName;
+    private String username;
 
 }

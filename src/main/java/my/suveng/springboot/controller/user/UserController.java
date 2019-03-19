@@ -24,7 +24,6 @@ public class UserController {
 
     @RequestMapping("/getList")
     public Result getList(){
-        userService.selectList();
-        return ResultBuilder.buildSimpleSuccessResult();
+        return new Result(ResCodeEnums.SIMPLE_SUCCESS.getCode(),ResCodeEnums.SIMPLE_SUCCESS.getDescription(),userService.selectList());
     }
 }

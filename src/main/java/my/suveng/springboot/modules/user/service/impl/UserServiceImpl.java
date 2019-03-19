@@ -8,6 +8,8 @@ import my.suveng.springboot.modules.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author suwenguang
  * suveng@163.com
@@ -20,15 +22,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
     @Override
-    public void selectList() {
-        User entity = new User();
-        entity.setEmail("12");
-        entity.setNickName("12");
-        entity.setPassWord("12");
-        entity.setRegTime("sd");
-        entity.setUserName("d");
-        log.info("user:【{}】", JSON.toJSONString(entity));
-        userRepository.save(entity);
-
+    public List<User> selectList() {
+        return userRepository.findAll();
     }
 }
