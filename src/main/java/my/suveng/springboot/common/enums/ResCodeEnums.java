@@ -10,7 +10,7 @@ public enum ResCodeEnums {
     /**
      * 请求成功
      */
-    SIMPLE_SUCCESS(200,"请求成功"),
+    SIMPLE_SUCCESS(20000,"请求成功"),
 
     /**
      * 未知错误
