@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withNullHandler(ExampleMatcher.NullHandler.IGNORE)
-                .withMatcher("username", ExampleMatcher.GenericPropertyMatchers.exact().ignoreCase(false));
+                .withMatcher("username", ExampleMatcher.GenericPropertyMatchers.exact());
 
         Example<User> example = Example.of(user, matcher);
 
