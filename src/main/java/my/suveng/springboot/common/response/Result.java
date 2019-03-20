@@ -10,17 +10,40 @@ import lombok.Data;
  **/
 @Data
 public class Result {
+    /**
+     * 错误码
+     */
     private Integer code;
+
+    /**
+     * 错误描述
+     **/
     private String msg;
+
+    /**
+     * 返回数据
+     **/
     private Object data;
 
+    /**
+     * 唯一入口
+     *
+     * @param resultEnums 系统内部错误枚举类
+     * @param data        返回数据
+     */
+    public Result(ResultEnums resultEnums, Object data) {
+        this.code = resultEnums.getCode();
+        this.msg = resultEnums.getDescription();
+        this.data = data;
+    }
 
-    public Result(Integer code, String msg, Object data) {
+    private Result(Integer code, String msg, Object data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
-    public Result() {
+
+    private Result() {
     }
 }

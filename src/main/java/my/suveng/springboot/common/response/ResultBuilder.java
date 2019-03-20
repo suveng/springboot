@@ -1,9 +1,5 @@
 package my.suveng.springboot.common.response;
 
-import my.suveng.springboot.common.enums.ResCodeEnums;
-
-import java.net.HttpURLConnection;
-
 /**
  * @author suwenguang
  * email suveng@163.com
@@ -12,28 +8,45 @@ import java.net.HttpURLConnection;
  **/
 public class ResultBuilder {
     /**
-     * 创建简单成功result，ResCodeEnums.SIMPLE_SUCCESS
+     * 创建方法
+     * @param resultEnums 错误枚举
+     * @param data 返回数据
+     */
+    public static Result build(ResultEnums resultEnums,Object data){
+        return new Result(resultEnums,data);
+    }
+
+    /**
+     * 创建简单参数错误返回
+     * @return Result 统一返回结果
+     */
+    public static Result buildSimpleIllegalArgumentError(){
+        return new Result(ResultEnums.ILLEGAL_ARGUMENT_ERROR,null);
+    }
+
+    /**
+     * 创建简单成功result，ResultEnums.SIMPLE_SUCCESS
      *
      * @return Result 统一返回结果
      */
     public static Result buildSimpleSuccessResult() {
-        return new Result(ResCodeEnums.SIMPLE_SUCCESS.getCode(), ResCodeEnums.SIMPLE_SUCCESS.getDescription(), null);
+        return new Result(ResultEnums.SIMPLE_SUCCESS, null);
     }
 
     /**
-     * 创建简单失败返回result，ResCodeEnums.SIMPLE_ERROR
+     * 创建简单失败返回result，ResultEnums.SIMPLE_ERROR
      * @return Result 统一返回结果
      */
     public static Result buildSimpleErrorResult(){
-        return new Result(ResCodeEnums.SIMPLE_ERROR.getCode(),ResCodeEnums.SIMPLE_ERROR.getDescription(),null);
+        return new Result(ResultEnums.SIMPLE_ERROR,null);
     }
 
     /**
-     * 创建未知原因失败返回result，ResCodeEnums.UNKNOWN_ERROR
+     * 创建未知原因失败返回result，ResultEnums.UNKNOWN_ERROR
      * @return Result 统一返回结果
      */
     public static Result buildUnknownResult(){
-        return new Result(ResCodeEnums.UNKNOWN_ERROR.getCode(),ResCodeEnums.UNKNOWN_ERROR.getDescription(),null);
+        return new Result(ResultEnums.UNKNOWN_ERROR,null);
     }
 
 }
