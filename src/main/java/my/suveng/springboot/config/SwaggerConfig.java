@@ -25,7 +25,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("my.suveng.springboot.view.controller"))
+                .apis(RequestHandlerSelectors.basePackage("my.suveng.springboot.controller"))
                 .paths(PathSelectors.any())
                 .build().useDefaultResponseMessages(false);
     }

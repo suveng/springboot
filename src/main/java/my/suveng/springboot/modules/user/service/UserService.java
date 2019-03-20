@@ -1,8 +1,7 @@
 package my.suveng.springboot.modules.user.service;
 
 import my.suveng.springboot.modules.user.entity.User;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
 
 /**
  * @author suwenguang
@@ -11,7 +10,15 @@ import java.util.List;
  * description:
  **/
 public interface UserService {
-    List<User> selectList();
+    /**
+     * 分页查询user list
+     * @return list
+     */
+    Page<User> selectList(User user, int page, int size);
 
+    /**
+     * 保存一个user
+     * @param user user
+     */
     void save(User user);
 }

@@ -1,4 +1,4 @@
-package my.suveng.springboot.common.enums;
+package my.suveng.springboot.common.response;
 
 /**
  * @author suwenguang
@@ -6,21 +6,29 @@ package my.suveng.springboot.common.enums;
  * since 2019/2/26
  * description: 返回状态码
  **/
-public enum ResCodeEnums {
+public enum ResultEnums {
     /**
      * 请求成功
      */
-    SIMPLE_SUCCESS(20000,"请求成功"),
+    SIMPLE_SUCCESS(20000, "请求成功"),
 
     /**
      * 未知错误
      **/
-    UNKNOWN_ERROR(100000,"未知错误"),
+    UNKNOWN_ERROR(100000, "未知错误"),
 
     /**
      * 请求失败
      **/
-    SIMPLE_ERROR(100001,"请求失败")
+    SIMPLE_ERROR(100001, "请求失败"),
+    /**
+     * 参数错误
+     */
+    ILLEGAL_ARGUMENT_ERROR(100002, "参数错误"),
+    /**
+     * 返回结果有误
+     */
+    ILLEGAL_RESULT_ERROR(100003, "返回结果有误"),
     ;
     /**
      * 系统状态码
@@ -33,10 +41,10 @@ public enum ResCodeEnums {
     private String description;
 
 
-    ResCodeEnums() {
+    ResultEnums() {
     }
 
-    ResCodeEnums(Integer code, String description) {
+    ResultEnums(Integer code, String description) {
         this.code = code;
         this.description = description;
     }
