@@ -34,16 +34,24 @@ public class UserServiceImpl implements UserService {
         }
         // 排序
         Sort orders = new Sort(Sort.Direction.DESC, "id");
-        // 搜索条件
+        // 构造搜索条件
+        Example<User> example = getUserExample(user);
 
+        // 分页查询
+        return userRepository.findAll(example,PageRequest.of(page, size, orders));
+    }
+
+    /**
+     * 构造搜索条件
+     * @param user 条件
+     * @return Example<User>
+     */
+    private Example<User> getUserExample(User user) {
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withNullHandler(ExampleMatcher.NullHandler.IGNORE)
                 .withMatcher("username", ExampleMatcher.GenericPropertyMatchers.exact());
 
-        Example<User> example = Example.of(user, matcher);
-
-        // 分页查询
-        return userRepository.findAll(example,PageRequest.of(page, size, orders));
+        return Example.of(user, matcher);
     }
 
     /**

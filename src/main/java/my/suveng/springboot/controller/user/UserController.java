@@ -12,10 +12,10 @@ import my.suveng.springboot.common.response.ResultEnums;
 import my.suveng.springboot.modules.user.entity.User;
 import my.suveng.springboot.modules.user.service.UserService;
 import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -62,6 +62,22 @@ public class UserController {
             return ResultBuilder.buildSimpleIllegalArgumentError();
         }
         userService.save(user);
+        return ResultBuilder.buildSimpleSuccessResult();
+    }
+
+    @RequestMapping("/addtestdata")
+    public Result addTestData() {
+        int i = 0;
+        while (i < 1000) {
+            User user = new User();
+            user.setRegTime(RandomStringUtils.randomAscii(5));
+            user.setEmail(RandomStringUtils.randomAscii(5));
+            user.setNickname(RandomStringUtils.randomAscii(5));
+            user.setPassword(RandomStringUtils.randomAscii(5));
+            user.setUsername(RandomStringUtils.randomAscii(5));
+            this.add(user);
+            i++;
+        }
         return ResultBuilder.buildSimpleSuccessResult();
     }
 }
