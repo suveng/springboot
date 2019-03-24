@@ -4,9 +4,11 @@ import lombok.Data;
 import org.apache.tomcat.util.security.MD5Encoder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author suwenguang
@@ -16,30 +18,31 @@ import java.io.Serializable;
  **/
 @Data
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String username="suveng";
+    @Column(columnDefinition = "varchar(20) not null default ''")
+    private String username;
 
-    @Column(nullable = false)
-    private String password= MD5Encoder.encode("1234".getBytes());
+    @Column(columnDefinition = "varchar(64) not null default ''")
+    private String password;
 
-    @Column(nullable = false)
-    private String email="suveng@163.com";
+    @Column(columnDefinition = "varchar(20) not null default ''")
+    private String email;
 
-    @Column(nullable = false)
-    private String phone= "0000";
+    @Column(columnDefinition = "varchar(20)  default ''")
+    private String phone;
 
     @CreatedDate
-    @Column(nullable = false)
-    private String creteTime;
+    @Column(columnDefinition = "TIMESTAMP not null DEFAULT CURRENT_TIMESTAMP")
+    private Date creteTime;
 
     @LastModifiedDate
-    @Column(nullable = false)
-    private String modifiedTime;
+    @Column(nullable = false,columnDefinition = "TIMESTAMP not null DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    private Date updateTime;
 
 
 }

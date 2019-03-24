@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RequestMapping("/user")
 @Api(tags = {"用户模块"})
+@CrossOrigin(origins = "*", allowCredentials = "true")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -36,7 +38,6 @@ public class UserController {
     @RequestMapping("/getList")
     @ApiOperation(value = "获取用户列表", httpMethod = "POST")
     @ApiResponses({@ApiResponse(code = 200, message = "统一返回对象", response = Result.class)})
-    @CrossOrigin(origins = "*")
     public Result getList(User user, Pagination pagination) {
         // 校验
         if (!ObjectUtils.allNotNull(user, pagination, pagination.getPageNum(), pagination.getPageSize())) {
@@ -55,7 +56,6 @@ public class UserController {
     @RequestMapping("/add")
     @ApiOperation(value = "添加用户", httpMethod = "POST")
     @ApiResponses({@ApiResponse(code = 200, message = "统一返回对象", response = Result.class)})
-    @CrossOrigin(origins = "*", allowCredentials = "true")
     public Result add(User user) {
         // 校验参数
         if (!ObjectUtils.allNotNull(user)) {
@@ -65,14 +65,12 @@ public class UserController {
         return ResultBuilder.buildSimpleSuccessResult();
     }
 
-    @RequestMapping("/addtestdata")
+    @RequestMapping("/addTestData")
     public Result addTestData() {
         int i = 0;
         while (i < 1000) {
             User user = new User();
-            user.setRegTime(RandomStringUtils.randomAscii(5));
             user.setEmail(RandomStringUtils.randomAscii(5));
-            user.setNickname(RandomStringUtils.randomAscii(5));
             user.setPassword(RandomStringUtils.randomAscii(5));
             user.setUsername(RandomStringUtils.randomAscii(5));
             this.add(user);

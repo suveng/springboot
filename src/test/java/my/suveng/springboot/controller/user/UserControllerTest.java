@@ -21,9 +21,7 @@ public class UserControllerTest extends ServerApplicationTests {
         int i = 0;
         while (i < 1000) {
             User user = new User();
-            user.setRegTime(RandomStringUtils.randomAscii(5));
             user.setEmail(RandomStringUtils.randomAscii(5));
-            user.setNickname(RandomStringUtils.randomAscii(5));
             user.setPassword(RandomStringUtils.randomAscii(5));
             user.setUsername(RandomStringUtils.randomAscii(5));
             userController.add(user);
