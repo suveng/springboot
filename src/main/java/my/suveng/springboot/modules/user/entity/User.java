@@ -1,7 +1,9 @@
 package my.suveng.springboot.modules.user.entity;
 
 import lombok.Data;
-
+import org.apache.tomcat.util.security.MD5Encoder;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,17 +18,28 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false)
-    private String email;
+    private String username="suveng";
+
     @Column(nullable = false)
-    private String nickname;
+    private String password= MD5Encoder.encode("1234".getBytes());
+
     @Column(nullable = false)
-    private String password;
+    private String email="suveng@163.com";
+
     @Column(nullable = false)
-    private String regTime;
+    private String phone= "0000";
+
+    @CreatedDate
     @Column(nullable = false)
-    private String username;
+    private String creteTime;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private String modifiedTime;
+
 
 }
