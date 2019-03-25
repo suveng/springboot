@@ -21,4 +21,9 @@ public interface UserService {
      * @param user user
      */
     void save(User user);
+
+    /**
+     * 清除所有数据
+     */
+    void removeAll();
 }

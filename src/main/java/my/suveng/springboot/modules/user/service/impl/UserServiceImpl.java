@@ -63,4 +63,12 @@ public class UserServiceImpl implements UserService {
     public void save(User user) {
         userRepository.save(user);
     }
+
+    /**
+     * 清除所有数据
+     */
+    @Override
+    public void removeAll() {
+        userRepository.deleteAll();
+    }
 }

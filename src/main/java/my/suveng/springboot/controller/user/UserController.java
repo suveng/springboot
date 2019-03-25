@@ -15,10 +15,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author suwenguang
@@ -56,7 +53,7 @@ public class UserController {
     @RequestMapping("/add")
     @ApiOperation(value = "添加用户", httpMethod = "POST")
     @ApiResponses({@ApiResponse(code = 200, message = "统一返回对象", response = Result.class)})
-    public Result add(User user) {
+    public Result add(@RequestBody User user) {
         // 校验参数
         if (!ObjectUtils.allNotNull(user)) {
             return ResultBuilder.buildSimpleIllegalArgumentError();
@@ -68,7 +65,7 @@ public class UserController {
     @RequestMapping("/addTestData")
     public Result addTestData() {
         int i = 0;
-        while (i < 1000) {
+        while (i < 200) {
             User user = new User();
             user.setEmail(RandomStringUtils.randomAscii(5));
             user.setPassword(RandomStringUtils.randomAscii(5));
@@ -76,6 +73,11 @@ public class UserController {
             this.add(user);
             i++;
         }
+        return ResultBuilder.buildSimpleSuccessResult();
+    }
+    @RequestMapping("/removeAll")
+    public Result removeAll() {
+        userService.removeAll();
         return ResultBuilder.buildSimpleSuccessResult();
     }
 }
