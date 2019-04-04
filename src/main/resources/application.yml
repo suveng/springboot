@@ -2,12 +2,13 @@ spring:
   profiles:
     active: dev
 server:
-  port: 443
+  address: 0.0.0.0
+  port: 8443
   ssl:
-    key-store: classpath:keystore.p12
-    key-store-type: PKCS12
-    key-alias: tomcat
-    key-store-password: 123456
+    enabled: true
+    key-store: classpath:cyjah.com.jks
+    key-store-password: suveng
+    key-store-type: JKS
   servlet:
     context-path: /springboot
 
