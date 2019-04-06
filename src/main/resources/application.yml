@@ -3,14 +3,14 @@ spring:
     active: dev
 server:
   address: 0.0.0.0
-  port: 8443
+  port: 9443
   ssl:
     enabled: true
     key-store: classpath:cyjah.com.jks
     key-store-password: suveng
     key-store-type: JKS
   servlet:
-    context-path: /springboot
+    context-path: /news
 
 
 
