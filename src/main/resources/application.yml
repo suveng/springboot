@@ -10,7 +10,7 @@ server:
     key-store-password: suveng
     key-store-type: JKS
   servlet:
-    context-path: /news
+    context-path: /server
 
 
 

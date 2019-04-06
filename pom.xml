@@ -11,8 +11,8 @@
     <groupId>my.suveng</groupId>
     <artifactId>news</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>news</name>
-    <description>news service</description>
+    <name>server</name>
+    <description>server</description>
 
 
     <properties>
