@@ -1,0 +1,29 @@
+package my.suveng.server.modules.user.service;
+
+import my.suveng.server.modules.user.entity.User;
+import org.springframework.data.domain.Page;
+
+/**
+ * @author suwenguang
+ * suveng@163.com
+ * since 2019/3/19
+ * description:
+ **/
+public interface UserService {
+    /**
+     * 分页查询user list
+     * @return list
+     */
+    Page<User> selectList(User user, int page, int size);
+
+    /**
+     * 保存一个user
+     * @param user user
+     */
+    void save(User user);
+
+    /**
+     * 清除所有数据
+     */
+    void removeAll();
+}
