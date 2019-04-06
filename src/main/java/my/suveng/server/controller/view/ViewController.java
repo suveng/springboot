@@ -4,7 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import my.suveng.server.common.aspect.annotations.CostTime;
+import my.suveng.server.common.aspect.costtime.usage.CostTime;
 import my.suveng.server.common.base.BaseController;
 import my.suveng.server.common.response.Result;
 import org.joda.time.DateTime;

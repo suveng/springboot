@@ -1,8 +1,8 @@
-package my.suveng.server.common.aspect;
+package my.suveng.server.common.aspect.costtime;
 
 
 import lombok.extern.slf4j.Slf4j;
-import my.suveng.server.common.aspect.annotations.CostTime;
+import my.suveng.server.common.aspect.costtime.usage.CostTime;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * @author suwenguang
  * suveng@163.com
  * since 2019/2/27
- * description: 切面类---计算执行时间
+ * description: 切面类---计算执行时间,再方法前添加@costtime注解即可打印执行时间
  **/
 @Aspect
 @Component

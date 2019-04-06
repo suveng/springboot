@@ -1,4 +1,4 @@
-package my.suveng.server.common.aspect.annotations;
+package my.suveng.server.common.aspect.costtime.usage;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

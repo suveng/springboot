@@ -1,4 +1,4 @@
-package my.suveng.server.common.exceptionHandler;
+package my.suveng.server.common.exceptionhandler;
 
 import my.suveng.server.common.response.Result;
 import my.suveng.server.common.response.ResultBuilder;
