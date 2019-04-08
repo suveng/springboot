@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
+import my.suveng.server.common.poi.export.POIIncrementExport;
 import my.suveng.server.modules.user.entity.User;
 import my.suveng.server.modules.user.service.UserService;
 import my.suveng.server.common.page.Pagination;
@@ -16,6 +17,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @author suwenguang
@@ -79,5 +84,13 @@ public class UserController {
     public Result removeAll() {
         userService.removeAll();
         return ResultBuilder.buildSimpleSuccessResult();
+    }
+    @RequestMapping("/export")
+    public void export(HttpServletResponse response){
+        String fileName = "demo";
+        POIIncrementExport poiIncrementExport = new POIIncrementExport(User.class,
+                Arrays.asList("id","username","password"));
+        poiIncrementExport.createTableBody(userService.selectList(new User(), 0, 20).getContent());
+        poiIncrementExport.writeAndFlush(response,fileName);
     }
 }

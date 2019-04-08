@@ -1,6 +1,8 @@
 package my.suveng.server.modules.user.entity;
 
 import lombok.Data;
+import my.suveng.server.common.poi.annotation.ExcelEntity;
+import my.suveng.server.common.poi.annotation.ExcelField;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -18,15 +20,19 @@ import java.util.Date;
 @Data
 @Entity
 @EntityListeners(AuditingEntityListener.class)
+@ExcelEntity(crosswalk = true, headRowNum = 2, headColumnNum = 1)
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ExcelField(name = "id")
     private Long id;
 
     @Column(columnDefinition = "varchar(20) not null default ''")
+    @ExcelField(name = "username")
     private String username;
 
     @Column(columnDefinition = "varchar(64) not null default ''")
+    @ExcelField(name = "password")
     private String password;
 
     @Column(columnDefinition = "varchar(20) not null default ''")
