@@ -1,14 +1,13 @@
 package my.suveng.server.common.aspect.costtime;
 
 
-import lombok.extern.slf4j.Slf4j;
 import my.suveng.server.common.aspect.costtime.usage.CostTime;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,8 +18,8 @@ import org.springframework.stereotype.Component;
  **/
 @Aspect
 @Component
-@Slf4j
 public class CostTimeAspect {
+    private static final Logger log = LoggerFactory.getLogger(CostTimeAspect.class);
     @Pointcut(value = "execution(* *..*.*.*(..)) ")
     public void anyMethod() {
     }
@@ -34,12 +33,12 @@ public class CostTimeAspect {
     @Around(value = "anyMethod() && @annotation(costTime)", argNames = "pjp,costTime")
     public Object aroundMethod(ProceedingJoinPoint pjp, CostTime costTime) {
         log.info("#############【{}】开始执行!",pjp.getSignature().toString());
-        DateTime start = DateTime.now();
+        long start = System.nanoTime();
         try {
             Object res = pjp.proceed();
-            DateTime end = DateTime.now();
-            long cost = new Duration(start, end).getMillis();
-            log.info("#############【{}】:执行完成,耗时：【{}】", pjp.getSignature().toString(), cost);
+            long end = System.nanoTime();
+            double cost = (end - start)/1000000;
+            log.info("#############【{}】:执行完成,耗时：【{} 毫秒】", pjp.getSignature().toString(), cost);
             return res;
         } catch (Throwable throwable) {
             log.error("方法【{}】执行异常！",pjp.getSignature().getDeclaringTypeName());
