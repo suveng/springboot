@@ -9,7 +9,7 @@ import lombok.Data;
  * description: 统一返回层
  **/
 @Data
-public class Result {
+public class Result<T> {
     /**
      * 错误码
      */
@@ -23,7 +23,7 @@ public class Result {
     /**
      * 返回数据
      **/
-    private Object data;
+    private T data;
 
     /**
      * 唯一入口
@@ -31,13 +31,13 @@ public class Result {
      * @param resultEnums 系统内部错误枚举类
      * @param data        返回数据
      */
-    public Result(ResultEnums resultEnums, Object data) {
+    public Result(ResultEnums resultEnums, T data) {
         this.code = resultEnums.getCode();
         this.msg = resultEnums.getDescription();
         this.data = data;
     }
 
-    private Result(Integer code, String msg, Object data) {
+    private Result(Integer code, String msg, T data) {
         this.code = code;
         this.msg = msg;
         this.data = data;

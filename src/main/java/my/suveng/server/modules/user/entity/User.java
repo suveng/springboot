@@ -1,5 +1,7 @@
 package my.suveng.server.modules.user.entity;
 
+import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.metadata.BaseRowModel;
 import lombok.Data;
 import my.suveng.server.common.poi.annotation.ExcelEntity;
 import my.suveng.server.common.poi.annotation.ExcelField;
@@ -21,18 +23,21 @@ import java.util.Date;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @ExcelEntity(crosswalk = true, headRowNum = 2, headColumnNum = 1)
-public class User implements Serializable {
+public class User extends BaseRowModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ExcelField(name = "id")
+    @ExcelProperty(value = "id",index = 0)
     private Long id;
 
     @Column(columnDefinition = "varchar(20) not null default ''")
     @ExcelField(name = "username")
+    @ExcelProperty(value = "姓名", index = 1)
     private String username;
 
     @Column(columnDefinition = "varchar(64) not null default ''")
     @ExcelField(name = "password")
+    @ExcelProperty(value = "密码", index = 2)
     private String password;
 
     @Column(columnDefinition = "varchar(20) not null default ''")

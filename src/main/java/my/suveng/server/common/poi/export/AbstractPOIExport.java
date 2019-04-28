@@ -90,11 +90,11 @@ public class AbstractPOIExport {
                         if (headStyle == null) {
                             headStyle = workbook.createCellStyle();
                             headStyle.setFillForegroundColor(HSSFColor.ORANGE.index);
-                            headStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
-                            headStyle.setBorderTop(CellStyle.BORDER_THIN);
-                            headStyle.setBorderBottom(CellStyle.BORDER_THIN);
-                            headStyle.setBorderRight(CellStyle.BORDER_THIN);
-                            headStyle.setBorderLeft(CellStyle.BORDER_THIN);
+//                            headStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+//                            headStyle.setBorderTop(CellStyle.BORDER_THIN);
+//                            headStyle.setBorderBottom(CellStyle.BORDER_THIN);
+//                            headStyle.setBorderRight(CellStyle.BORDER_THIN);
+//                            headStyle.setBorderLeft(CellStyle.BORDER_THIN);
                         }
                         cell.setCellStyle(headStyle);
                     }
@@ -122,11 +122,11 @@ public class AbstractPOIExport {
                         if (headStyle == null) {
                             headStyle = workbook.createCellStyle();
                             headStyle.setFillForegroundColor(HSSFColor.ORANGE.index);
-                            headStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
-                            headStyle.setBorderTop(CellStyle.BORDER_THIN);
-                            headStyle.setBorderBottom(CellStyle.BORDER_THIN);
-                            headStyle.setBorderRight(CellStyle.BORDER_THIN);
-                            headStyle.setBorderLeft(CellStyle.BORDER_THIN);
+//                            headStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+//                            headStyle.setBorderTop(CellStyle.BORDER_THIN);
+//                            headStyle.setBorderBottom(CellStyle.BORDER_THIN);
+//                            headStyle.setBorderRight(CellStyle.BORDER_THIN);
+//                            headStyle.setBorderLeft(CellStyle.BORDER_THIN);
                         }
                         cell.setCellStyle(headStyle);
                     }
@@ -242,20 +242,20 @@ public class AbstractPOIExport {
                             if (crosswalkStyle == null) {
                                 crosswalkStyle = workbook.createCellStyle();
                                 crosswalkStyle.setFillForegroundColor(HSSFColor.LIGHT_GREEN.index);
-                                crosswalkStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
-                                crosswalkStyle.setBorderTop(CellStyle.BORDER_THIN);
-                                crosswalkStyle.setBorderBottom(CellStyle.BORDER_THIN);
-                                crosswalkStyle.setBorderRight(CellStyle.BORDER_THIN);
-                                crosswalkStyle.setBorderLeft(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+//                                crosswalkStyle.setBorderTop(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setBorderBottom(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setBorderRight(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setBorderLeft(CellStyle.BORDER_THIN);
                             }
                             cell.setCellStyle(crosswalkStyle);
                         } else {
                             if (style == null) {
                                 style = workbook.createCellStyle();
-                                style.setBorderTop(CellStyle.BORDER_THIN);
-                                style.setBorderBottom(CellStyle.BORDER_THIN);
-                                style.setBorderRight(CellStyle.BORDER_THIN);
-                                style.setBorderLeft(CellStyle.BORDER_THIN);
+//                                style.setBorderTop(CellStyle.BORDER_THIN);
+//                                style.setBorderBottom(CellStyle.BORDER_THIN);
+//                                style.setBorderRight(CellStyle.BORDER_THIN);
+//                                style.setBorderLeft(CellStyle.BORDER_THIN);
                             }
                             cell.setCellStyle(style);
                         }
@@ -286,20 +286,20 @@ public class AbstractPOIExport {
                             if (crosswalkStyle == null) {
                                 crosswalkStyle = workbook.createCellStyle();
                                 crosswalkStyle.setFillForegroundColor(HSSFColor.LIGHT_GREEN.index);
-                                crosswalkStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
-                                crosswalkStyle.setBorderTop(CellStyle.BORDER_THIN);
-                                crosswalkStyle.setBorderBottom(CellStyle.BORDER_THIN);
-                                crosswalkStyle.setBorderRight(CellStyle.BORDER_THIN);
-                                crosswalkStyle.setBorderLeft(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+//                                crosswalkStyle.setBorderTop(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setBorderBottom(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setBorderRight(CellStyle.BORDER_THIN);
+//                                crosswalkStyle.setBorderLeft(CellStyle.BORDER_THIN);
                             }
                             cell.setCellStyle(crosswalkStyle);
                         } else {
                             if (style == null) {
                                 style = workbook.createCellStyle();
-                                style.setBorderTop(CellStyle.BORDER_THIN);
-                                style.setBorderBottom(CellStyle.BORDER_THIN);
-                                style.setBorderRight(CellStyle.BORDER_THIN);
-                                style.setBorderLeft(CellStyle.BORDER_THIN);
+//                                style.setBorderTop(CellStyle.BORDER_THIN);
+//                                style.setBorderBottom(CellStyle.BORDER_THIN);
+//                                style.setBorderRight(CellStyle.BORDER_THIN);
+//                                style.setBorderLeft(CellStyle.BORDER_THIN);
                             }
                             cell.setCellStyle(style);
                         }
