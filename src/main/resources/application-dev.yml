@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springboot?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/bike?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
     username: root
     password: root
   freemarker:
@@ -24,5 +24,5 @@ spring:
     suffix: .ftl
 #mybatis-plus
 mybatis-plus:
-  mapper-locations: classpath:my/suveng/server/modules/*/mapper/*.xml
-  type-aliases-package: my.suveng.server.modules.*.model
+  mapper-locations: classpath:my/suveng/server/modules/*/mapper/xml/*.xml
+  type-aliases-package: my.suveng.server.modules.*.entity

@@ -1,5 +1,7 @@
 package my.suveng.server.common.response;
 
+import org.apache.poi.ss.formula.functions.T;
+
 /**
  * @author suwenguang
  * email suveng@163.com
@@ -12,8 +14,8 @@ public class ResultBuilder {
      * @param resultEnums 错误枚举
      * @param data 返回数据
      */
-    public static Result build(ResultEnums resultEnums,Object data){
-        return new Result(resultEnums,data);
+    public static Result build(ResultEnums resultEnums, Object data){
+        return new Result(resultEnums, data);
     }
 
     /**

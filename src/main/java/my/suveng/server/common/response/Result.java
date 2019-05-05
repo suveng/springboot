@@ -1,6 +1,7 @@
 package my.suveng.server.common.response;
 
 import lombok.Data;
+import org.apache.poi.ss.formula.functions.T;
 
 /**
  * @author suwenguang
@@ -9,7 +10,7 @@ import lombok.Data;
  * description: 统一返回层
  **/
 @Data
-public class Result<T> {
+public class Result {
     /**
      * 错误码
      */
@@ -23,7 +24,7 @@ public class Result<T> {
     /**
      * 返回数据
      **/
-    private T data;
+    private Object data;
 
     /**
      * 唯一入口
@@ -31,13 +32,13 @@ public class Result<T> {
      * @param resultEnums 系统内部错误枚举类
      * @param data        返回数据
      */
-    public Result(ResultEnums resultEnums, T data) {
+    Result(ResultEnums resultEnums, Object data) {
         this.code = resultEnums.getCode();
         this.msg = resultEnums.getDescription();
         this.data = data;
     }
 
-    private Result(Integer code, String msg, T data) {
+    private Result(Integer code, String msg, Object data) {
         this.code = code;
         this.msg = msg;
         this.data = data;

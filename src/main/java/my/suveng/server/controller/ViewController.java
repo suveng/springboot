@@ -1,4 +1,4 @@
-package my.suveng.server.controller.view;
+package my.suveng.server.controller;
 
 import my.suveng.server.common.aspect.costtime.usage.CostTime;
 import my.suveng.server.common.base.BaseController;
