@@ -7,7 +7,7 @@
             <charset>UTF-8</charset>
         </encoder>
     </appender>
-    <appender name="FileWarnDown" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="WarnDown" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高，
         所以我们使用下面的策略，可以避免输出 Error 的日志-->
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -22,23 +22,24 @@
         如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
         的日志改名为今天的日期。即，<File> 的日志都是当天的。
         -->
-        <File>/data/logs/server/debug.console.log</File>
+        <File>/data/logs/server/debug.server.log</File>
         <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
-            <FileNamePattern>/data/logs/server/info.console.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>/data/logs/server/debug.server.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
             <!--只保留最近90天的日志-->
             <maxHistory>90</maxHistory>
             <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
-            <!--<totalSizeCap>1GB</totalSizeCap>-->
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>20GB</totalSizeCap>
         </rollingPolicy>
         <!--日志输出编码格式化-->
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{35} - %msg %n</pattern>
         </encoder>
     </appender>
-    <appender name="FileErrorUp" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="ErrorUp" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter-->
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>Error</level>
@@ -47,26 +48,50 @@
         如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
         的日志改名为今天的日期。即，<File> 的日志都是当天的。
         -->
-        <File>/data/logs/server/error.console.log</File>
+        <File>/data/logs/server/error.server.log</File>
         <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
-            <FileNamePattern>/data/logs/server/error.console.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>/data/logs/server/error.server.log.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
             <!--只保留最近90天的日志-->
             <maxHistory>90</maxHistory>
             <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
-            <!--<totalSizeCap>1GB</totalSizeCap>-->
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>20GB</totalSizeCap>
         </rollingPolicy>
         <!--日志输出编码格式化-->
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{35} - %msg %n</pattern>
         </encoder>
     </appender>
+
+    <appender name="systemLogger" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/data/logs/server/sys/sys.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
+            <FileNamePattern>/data/logs/server/sys/sys.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <!--只保留最近90天的日志-->
+            <maxHistory>90</maxHistory>
+            <!--用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{35} - %msg %n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="systemLogger" level="INFO" additivity="true">
+        <appender-ref ref="systemLogger" />
+    </logger>
+
     <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FileWarnDown"/>
-        <appender-ref ref="FileErrorUp"/>
+        <appender-ref ref="WarnDown"/>
+        <appender-ref ref="ErrorUp"/>
     </root>
+
 
 </configuration>

@@ -1,16 +1,13 @@
 package my.suveng.server.common.logback;
 
-import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-import sun.rmi.runtime.Log;
 
 /**
  * @author suwenguang
  *         suveng@163.com
  * since 2019/5/15
- * description:
+ * description: 日志分业务模块打印到不同文件
  **/
 public class LogbackFactory {
     /**
