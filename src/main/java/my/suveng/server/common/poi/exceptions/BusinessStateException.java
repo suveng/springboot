@@ -1,5 +1,5 @@
 
-package my.suveng.server.common.exceptions;
+package my.suveng.server.common.poi.exceptions;
 
 /**
  * @description

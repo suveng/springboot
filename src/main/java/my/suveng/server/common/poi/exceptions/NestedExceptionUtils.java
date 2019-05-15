@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package my.suveng.server.common.exceptions;
+package my.suveng.server.common.poi.exceptions;
 
 /**
  * Helper class for implementing exception classes which are capable of

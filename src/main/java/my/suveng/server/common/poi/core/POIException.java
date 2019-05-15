@@ -2,7 +2,7 @@
 package my.suveng.server.common.poi.core;
 
 
-import my.suveng.server.common.exceptions.NestedRuntimeException;
+import my.suveng.server.common.poi.exceptions.NestedRuntimeException;
 
 /**
  * @description POI异常类

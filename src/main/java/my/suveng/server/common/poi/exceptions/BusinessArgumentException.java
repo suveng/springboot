@@ -1,4 +1,4 @@
-package my.suveng.server.common.exceptions;
+package my.suveng.server.common.poi.exceptions;
 
 /**
  * @description 业务参数异常异常封装

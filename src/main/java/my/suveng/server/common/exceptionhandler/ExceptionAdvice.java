@@ -1,7 +1,9 @@
 package my.suveng.server.common.exceptionhandler;
 
+import my.suveng.server.common.logback.LogbackFactory;
 import my.suveng.server.common.response.Result;
 import my.suveng.server.common.response.ResultBuilder;
+import org.slf4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,13 +18,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  **/
 @ControllerAdvice
 public class ExceptionAdvice {
-
+    Logger logger = LogbackFactory.SYSTEM_LOGGER;
 
     @ExceptionHandler({Exception.class})
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public Result handleIndexOutOfBoundsException(Exception e) {
-        e.printStackTrace();
+        logger.error("系统发生异常", e);
         return ResultBuilder.buildUnknownResult();
     }
 }

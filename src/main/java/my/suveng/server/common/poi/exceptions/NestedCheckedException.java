@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package my.suveng.server.common.exceptions;
-
-import org.springframework.core.NestedExceptionUtils;
+package my.suveng.server.common.poi.exceptions;
 
 /**
- * Handy class for wrapping runtime <code>Exceptions</code> with a root cause.
+ * Handy class for wrapping checked <code>Exceptions</code> with a root cause.
  *
  * <p>This class is <code>abstract</code> to force the programmer to extend
  * the class. <code>getMessage</code> will include nested exception
  * information; <code>printStackTrace</code> and other like methods will
  * delegate to the wrapped exception, if any.
  *
+ * <p>The similarity between this class and the {@link NestedRuntimeException}
  * class is unavoidable, as Java forces these two classes to have different
  * superclasses (ah, the inflexibility of concrete inheritance!).
  *
@@ -33,11 +32,12 @@ import org.springframework.core.NestedExceptionUtils;
  * @author Juergen Hoeller
  * @see #getMessage
  * @see #printStackTrace
+ * @see NestedRuntimeException
  */
-public abstract class NestedRuntimeException extends RuntimeException {
+public abstract class NestedCheckedException extends Exception {
 
 	/** Use serialVersionUID from Spring 1.2 for interoperability */
-	private static final long serialVersionUID = 5439915454935047936L;
+	private static final long serialVersionUID = 7100714597678207546L;
 
 	static {
 		// Eagerly load the NestedExceptionUtils class to avoid classloader deadlock
@@ -47,20 +47,20 @@ public abstract class NestedRuntimeException extends RuntimeException {
 
 
 	/**
-	 * Construct a <code>NestedRuntimeException</code> with the specified detail message.
+	 * Construct a <code>NestedCheckedException</code> with the specified detail message.
 	 * @param msg the detail message
 	 */
-	public NestedRuntimeException(String msg) {
+	public NestedCheckedException(String msg) {
 		super(msg);
 	}
 
 	/**
-	 * Construct a <code>NestedRuntimeException</code> with the specified detail message
+	 * Construct a <code>NestedCheckedException</code> with the specified detail message
 	 * and nested exception.
 	 * @param msg the detail message
 	 * @param cause the nested exception
 	 */
-	public NestedRuntimeException(String msg, Throwable cause) {
+	public NestedCheckedException(String msg, Throwable cause) {
 		super(msg, cause);
 	}
 
@@ -78,7 +78,6 @@ public abstract class NestedRuntimeException extends RuntimeException {
 	/**
 	 * Retrieve the innermost cause of this exception, if any.
 	 * @return the innermost exception, or <code>null</code> if none
-	 * @since 2.0
 	 */
 	public Throwable getRootCause() {
 		Throwable rootCause = null;
@@ -121,8 +120,8 @@ public abstract class NestedRuntimeException extends RuntimeException {
 		if (cause == this) {
 			return false;
 		}
-		if (cause instanceof NestedRuntimeException) {
-			return ((NestedRuntimeException) cause).contains(exType);
+		if (cause instanceof NestedCheckedException) {
+			return ((NestedCheckedException) cause).contains(exType);
 		}
 		else {
 			while (cause != null) {
