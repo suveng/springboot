@@ -87,7 +87,7 @@
         <appender-ref ref="systemLogger" />
     </logger>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="WarnDown"/>
         <appender-ref ref="ErrorUp"/>

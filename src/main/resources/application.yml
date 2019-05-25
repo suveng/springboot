@@ -1,17 +1,41 @@
-spring:
-  profiles:
-    active: dev
 server:
   address: 0.0.0.0
   port: 9443
   ssl:
     enabled: true
-    key-store: classpath:cyjah.com.jks
-    key-store-password: suveng
+    key-store: classpath:xn--tfrza1844az9b.cn.jks
+    key-store-password: 06o0wz63q09h75
     key-store-type: JKS
   servlet:
     context-path: /server
-
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:my/suveng/server/modules/*/mapper/xml/*.xml
+  type-aliases-package: my.suveng.server.modules.*.entity
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bike?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+  freemarker:
+    template-loader-path: classpath:/templates/
+    cache: false
+    charset: utf-8
+    allow-request-override: false
+    allow-session-override: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: true
+    #    prefix:                                               #在构建URL时添加前缀
+    request-context-attribute: request                    #在 ftl 中使用 request.contextPath
+    settings: {"date_format":"yyyy-MM-dd","datetime_format":"yyyy-MM-dd HH:mm:ss"}
+    #    view-names:
+    suffix: .ftl
 
 
 
