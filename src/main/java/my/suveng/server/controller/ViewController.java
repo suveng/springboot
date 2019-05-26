@@ -1,7 +1,6 @@
 package my.suveng.server.controller;
 
-import my.suveng.server.common.aspect.costtime.usage.CostTime;
-import my.suveng.server.common.base.BaseController;
+import my.suveng.server.common.costtime.usage.CostTime;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/view")
-public class ViewController extends BaseController {
+public class ViewController{
     /**
      * 测试 视图
      *

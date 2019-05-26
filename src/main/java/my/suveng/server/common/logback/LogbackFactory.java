@@ -14,10 +14,9 @@ public class LogbackFactory {
      * 系统logger
      */
     public static Logger SYSTEM_LOGGER = LoggerFactory.getLogger("systemLogger");
-
     /**
-     * 业务模块-user模块 logger
+     * 计算执行时间 logger
      */
-    public static Logger USER_LOGGER =LoggerFactory.getLogger("userLogger");
+    public static Logger COSTTIME = LoggerFactory.getLogger("costTime");
 
 }
