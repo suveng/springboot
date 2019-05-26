@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author 苏文广 created at 2019/1/29
  */
 @Controller
-@RequestMapping("/view")
 public class ViewController{
     /**
      * 测试 视图
@@ -28,4 +27,12 @@ public class ViewController{
         model.addAttribute("time", new DateTime().toDate());
         return "test";
     }
+
+    @RequestMapping("/user/login.html")
+    @CostTime
+    public String login(){
+        return "login";
+    }
+
+
 }
