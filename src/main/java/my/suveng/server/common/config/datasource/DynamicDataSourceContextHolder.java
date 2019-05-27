@@ -13,8 +13,6 @@ public class DynamicDataSourceContextHolder {
 
     /**
      * 说明: 当前采用的数据源
-     * @author  suwenguang
-     * @date    2019/5/27
      */
     private static final ThreadLocal<DataSourceKey> CURRENT_DATESOURCE = new ThreadLocal<>();
 

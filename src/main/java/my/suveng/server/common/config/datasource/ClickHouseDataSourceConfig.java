@@ -26,7 +26,7 @@ public class ClickHouseDataSourceConfig {
     @Bean(name = "clickHouseDataSource")
     @ConfigurationProperties(prefix = "spring.clickhouse")
     public DruidDataSource clickHouseDataSource() {
-        log.info("clickhouse datasource就绪");
+        log.info("########:clickhouse datasource就绪:########");
         return new DruidDataSource();
     }
     @Bean(name = "clickHouseSqlSessionFactory")

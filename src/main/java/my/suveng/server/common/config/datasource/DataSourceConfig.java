@@ -31,13 +31,16 @@ public class DataSourceConfig {
      */
     @Bean
     public DataSource dynamicDataSource() {
+        //创建数据源路由
         DynamicRoutingDataSource dynamicRoutingDataSource = new DynamicRoutingDataSource();
+        //设置默认数据源为MySQL
         dynamicRoutingDataSource.setDefaultTargetDataSource(dataSource);
+        //设置目标数据源列表
         Map<Object, Object> dataSourceMap = new HashMap<>(2);
         dataSourceMap.put(DataSourceKey.mysql, dataSource);
         dataSourceMap.put(DataSourceKey.ck, clickHouseDataSource);
         dynamicRoutingDataSource.setTargetDataSources(dataSourceMap);
-        log.info("多数据源就绪");
+        log.info("########多数据源就绪########");
         return dynamicRoutingDataSource;
     }
 }

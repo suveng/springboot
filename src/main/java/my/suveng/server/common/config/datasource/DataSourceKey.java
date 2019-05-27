@@ -1,7 +1,5 @@
 package my.suveng.server.common.config.datasource;
 
-import java.util.function.Supplier;
-
 /**
  * description:
  * @author suwenguang@52tt.com
@@ -9,7 +7,15 @@ import java.util.function.Supplier;
  * @version 1.0.0
  **/
 public enum DataSourceKey {
+
+    /**
+     * mysql数据源
+     **/
     mysql("mysqlDataSource"),
+
+    /**
+     * clickhouse 数据源
+     **/
     ck("clickHouseDataSource"),
     ;
 
@@ -18,6 +24,10 @@ public enum DataSourceKey {
         this.name = name;
     }
 
+
+    /**
+     * 数据源名称
+     **/
     private String name;
 
 }
