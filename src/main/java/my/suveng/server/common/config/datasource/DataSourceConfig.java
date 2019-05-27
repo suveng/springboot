@@ -18,7 +18,7 @@ import java.util.Map;
  **/
 @Configuration
 @Slf4j
-public class DataConfig {
+public class DataSourceConfig {
     @Autowired
     private DruidDataSource clickHouseDataSource;
     @Autowired

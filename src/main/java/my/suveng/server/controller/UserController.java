@@ -41,7 +41,7 @@ public class UserController {
     }
     @RequestMapping("/getUser")
     public Response getUser(){
-        DynamicDataSourceContextHolder.set(DataSourceKey.mysql);
+        //DynamicDataSourceContextHolder.set(DataSourceKey.mysql);
         List<User> users = userMapper.selectList();
         return  ResponseBuilder.build(ResponseEnums.SIMPLE_SUCCESS,users);
     }
