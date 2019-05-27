@@ -10,15 +10,11 @@ server:
     context-path: /server
 #mybatis-plus
 mybatis-plus:
-  mapper-locations: classpath:my/suveng/server/modules/*/mapper/xml/*.xml
+  mapper-locations: classpath*:my/suveng/server/modules/user/mapper/*/*.xml
   type-aliases-package: my.suveng.server.modules.*.entity
 spring:
   datasource:
     druid:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/bike?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
-      username: root
-      password: root
       # 初始化时建立物理连接的个数
       initial-size: 5
       # 最大连接池数量
@@ -73,7 +69,8 @@ spring:
     driver-class-name: ru.yandex.clickhouse.ClickHouseDriver
     username:
     password:
-
-    
-
-
+  mysql:
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bike?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.suveng.server.modules.user.mapper.ck.UserCkMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="my.suveng.server.modules.user.entity.UserCk">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+    </resultMap>
+    <select id="selectTotal" resultType="java.lang.Integer">
+        select count(1) from bike.user
+    </select>
+    <select id="selectList" resultMap="BaseResultMap">
+        select * from bike.user
+    </select>
+
+
+</mapper>
