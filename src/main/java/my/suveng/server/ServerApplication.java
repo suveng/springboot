@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author suveng
  */
 @SpringBootApplication
-@MapperScan("my.suveng.server.modules.*.mapper")
 public class ServerApplication {
 
     public static void main(String[] args) {

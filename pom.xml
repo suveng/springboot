@@ -132,17 +132,29 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core -->
-        <dependency>
-            <groupId>org.apache.flume</groupId>
-            <artifactId>flume-ng-core</artifactId>
-            <version>1.9.0</version>
-        </dependency>
+
         <!-- druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.9</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core -->
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-core</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        <!--clickhouse-->
+        <dependency>
+          <groupId>ru.yandex.clickhouse</groupId>
+          <artifactId>clickhouse-jdbc</artifactId>
+          <version>0.1.43</version>
+        </dependency>
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>19.0</version>
         </dependency>
     </dependencies>
 
