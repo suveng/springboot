@@ -29,12 +29,15 @@ pipeline {
     }
     stage('部署') {
       steps {
+      withEnv(['BUILD_ID=dontKillMe']) {
         sh label: '', script: '''#!/bin/bash -ilex
-        jps
-        nohup java -jar target/*.jar > springboot.log &
-        jps
-        '''
+                jps
+                nohup java -jar target/*.jar > springboot.log &
+                jps
+                '''
+        }
       }
+
     }
   }
 }
