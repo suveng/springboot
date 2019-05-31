@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  triggers {
-        githubPush()
-  }
   stages {
     stage('停机') {
       steps {
