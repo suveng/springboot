@@ -2,7 +2,7 @@
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%black(控制台-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
+            <pattern>%black(server-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -10,7 +10,7 @@
         <!--如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高，
         所以我们使用下面的策略，可以避免输出 Error 的日志-->
         <encoder>
-            <pattern>%black(控制台-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
+            <pattern>%black(server-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -39,7 +39,7 @@
     </appender>
     <appender name="ErrorUp" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
-            <pattern>%black(控制台-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
+            <pattern>%black(server-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <!--如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter-->
@@ -65,7 +65,7 @@
 
     <appender name="costTime" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
-            <pattern>%black(控制台-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
+            <pattern>%black(server-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <!--如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter-->
@@ -90,7 +90,7 @@
     </appender>
     <appender name="springbootLogger" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
-            <pattern>%black(控制台-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
+            <pattern>%black(server-) 时间:%red(%d{yyyy-MM-dd HH:mm:ss}) 线程名:%green([%thread]) 级别:%highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <!--如果只是想要 Error 级别的日志，那么需要过滤一下，默认是 info 级别的，ThresholdFilter-->
