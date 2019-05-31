@@ -6,9 +6,9 @@ pipeline {
   stages {
     stage('准备环境') {
       steps {
-        sh 'source /etc/profile'
-        sh 'java -version'
-        sh 'mvn -version'
+        sh -ilex 'source /etc/profile'
+        sh -ilex 'java -version'
+        sh -ilex 'mvn -version'
       }
     }
     stage('构建') {
