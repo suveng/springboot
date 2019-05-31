@@ -30,7 +30,9 @@ pipeline {
     stage('部署') {
       steps {
         sh label: '', script: '''#!/bin/bash -ilex
+        jps
         nohup java -jar target/*.jar > springboot.log &
+        jps
         '''
       }
     }
