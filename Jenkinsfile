@@ -12,7 +12,7 @@ pipeline {
         mvn -version
 
         echo '获取pid'
-        PID=$(cat /etc/xiaobo/suveng/springboot.pid)
+        PID=$(jps | grep server | awk -F ' ' '{ print  $1 }')
         echo "pid进程: $PID"
 
         if [ -d /proc/$PID];then
