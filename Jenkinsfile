@@ -20,7 +20,8 @@ pipeline {
 
 
         RES=$(kill $PID)
-        echo "KILL RES : $RES"
+        echo "KILL RES :"
+        echo $RES
 
         echo '判断kill是否成功'
         if [ !$RES ]
@@ -32,8 +33,6 @@ pipeline {
           exit 1
         fi
 
-        echo '查看进程'
-        jps
         '''
       }
 
