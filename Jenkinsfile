@@ -15,7 +15,8 @@ pipeline {
         PID=$(jps | grep server | awk -F ' ' '{ print  $1 }')
         echo "pid进程: $PID"
 
-        if [ -d /proc/$PID];then
+        if [ -d /proc/$PID ];
+        then
             echo "$PID进程存在,继续执行"
         else
             echo '$PID不存在,退出,-1'
