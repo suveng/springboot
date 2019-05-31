@@ -20,8 +20,8 @@ pipeline {
       steps {
         sh label: '', script: '''#!/bin/bash -ilex
         mvn clean
-        mvn install
-        mvn package
+        mvn install -Dmaven.test.skip=true
+        mvn package -Dmaven.test.skip=true
         '''
       }
     }
