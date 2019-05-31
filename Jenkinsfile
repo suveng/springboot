@@ -12,7 +12,7 @@ pipeline {
         mvn -version
 
         echo '获取pid'
-        PID=$(jps | grep server | awk -F ' ' '{ print  $1 }')
+        PID=$(netstat  -anop  | grep 9443 | awk -F ' ' '{print $7}' | awk -F '/' '{print $1}')
         echo "pid进程: $PID"
 
         if [ -d /proc/$PID ];
