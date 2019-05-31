@@ -22,20 +22,7 @@ pipeline {
             exit -1
         fi
 
-
-        RES=$(kill $PID)
-        echo "KILL RES :"
-        echo $RES
-
-        echo '判断kill是否成功'
-        if [ !$RES ]
-        then
-          echo '0,成功杀死进程'
-        else
-          echo '1,kill失败'
-          echo '退出-1'
-          exit 1
-        fi
+        kill $PID
 
         '''
       }
