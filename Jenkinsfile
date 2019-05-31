@@ -31,7 +31,7 @@ pipeline {
         steps {
           sh label: '', script: '''#!/bin/bash -ilex
           jps
-          BUILD_ID=dontKillMe nohup java -jar target/*.jar > springboot.log &
+          JENKINS_NODE_COOKIE=dontKillMe nohup java -jar target/*.jar > springboot.log &
           jps
           '''
         }
