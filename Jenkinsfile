@@ -19,5 +19,10 @@ pipeline {
         sh 'echo "部署"'
       }
     }
+    stage('eeeee') {
+      steps {
+        sh 'echo "部署"'
+      }
+    }
   }
 }
