@@ -9,9 +9,9 @@ server:
   servlet:
     context-path: /server
 #mybatis-plus
-mybatis-plus:
-  mapper-locations: classpath*:my/suveng/server/modules/user/mapper/*/*.xml
-  type-aliases-package: my.suveng.server.modules.*.entity
+#mybatis-plus:
+#  mapper-locations: classpath*:my/suveng/server/modules/user/mapper/*/*.xml
+#  type-aliases-package: my.suveng.server.modules.*.entity
 spring:
   datasource:
     druid:
@@ -71,6 +71,6 @@ spring:
     password:
   mysql:
     username: root
-    password: root
+    password: zxcvbnm123...
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://111.230.95.206:3306/system?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
