@@ -4,11 +4,14 @@ pipeline {
         githubPush()
   }
   stages {
-    stage('准备环境') {
+    stage('停机') {
       steps {
         sh label: '', script: '''#!/bin/bash -ilex
         java -version
         mvn -version
+        PID=$(cat /etc/xiaobo/suveng/springboot.pid)
+        kill $PID
+        jps
         '''
       }
 
@@ -31,7 +34,11 @@ pipeline {
         steps {
           sh label: '', script: '''#!/bin/bash -ilex
           jps
-          JENKINS_NODE_COOKIE=dontKillMe nohup java -jar target/*.jar > springboot.log &
+          mv target/*.jar /etc/xiaobo/suveng/app/springboot/
+          JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /etc/xiaobo/suveng/app/springboot/*.jar >  /etc/xiaobo/suveng/log/springboot.log &
+          echo $! > /etc/xiaobo/suveng/springboot.pid
+          PID=$(cat /etc/xiaobo/suveng/springboot.pid)
+          echo $PID
           jps
           '''
         }
