@@ -6,15 +6,15 @@ pipeline {
   stages {
     stage('准备环境') {
       steps {
-        sh  ' #!/bin/bash -ilex &&　source /etc/profile && java -version && mvn -version'
+        sh  ' #!/bin/bash -ilex && mvn -version'
       }
 
     }
     stage('构建') {
       steps {
-        sh 'mvn clean'
-        sh 'mvn insatll -Dmaven.test.skip=true'
-        sh 'mvn package -Dmaven.test.skip=true'
+        sh '#!/bin/bash -ilex && mvn clean'
+        sh '#!/bin/bash -ilex && mvn insatll -Dmaven.test.skip=true'
+        sh '#!/bin/bash -ilex && mvn package -Dmaven.test.skip=true'
       }
     }
     stage('测试') {
@@ -25,7 +25,7 @@ pipeline {
     stage('部署') {
       steps {
         sh 'echo "########运行部署脚本########"'
-        sh 'java -jar target/*.jar'
+        sh '#!/bin/bash -ilex && java -jar target/*.jar'
         sh 'echo "########部署成功########"'
       }
     }
