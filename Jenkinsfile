@@ -4,6 +4,13 @@ pipeline {
         githubPush()
   }
   stages {
+    stage('准备环境') {
+      steps {
+        sh 'source /etc/profile'
+        sh 'java -version'
+        sh 'mvn -version'
+      }
+    }
     stage('构建') {
       steps {
         sh 'mvn clean'
