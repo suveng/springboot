@@ -6,13 +6,9 @@ pipeline {
   stages {
     stage('准备环境') {
       steps {
-        sh  '
-            #!/bin/bash -ilex
-            source /etc/profile
-            java -version
-            mvn -version
-        '
+        sh  ' #!/bin/bash -ilex &&　source /etc/profile && java -version && mvn -version'
       }
+
     }
     stage('构建') {
       steps {
