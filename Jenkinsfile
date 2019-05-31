@@ -6,15 +6,20 @@ pipeline {
   stages {
     stage('准备环境') {
       steps {
-        sh  ' #!/bin/bash -ilex && mvn -version'
+        sh label: '', script: '''#!/bin/bash -ilex
+        java -version
+        mvn -version
+        '''
       }
 
     }
     stage('构建') {
       steps {
-        sh '#!/bin/bash -ilex && mvn clean'
-        sh '#!/bin/bash -ilex && mvn insatll -Dmaven.test.skip=true'
-        sh '#!/bin/bash -ilex && mvn package -Dmaven.test.skip=true'
+        sh label: '', script: '''#!/bin/bash -ilex
+        mvn clean
+        mvn install
+        mvn package
+        '''
       }
     }
     stage('测试') {
