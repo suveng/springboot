@@ -29,9 +29,9 @@ pipeline {
     }
     stage('部署') {
       steps {
-        sh 'echo "########运行部署脚本########"'
-        sh '#!/bin/bash -ilex && java -jar target/*.jar'
-        sh 'echo "########部署成功########"'
+        sh label: '', script: '''#!/bin/bash -ilex
+        java -jar target/*.jar
+        '''
       }
     }
   }
