@@ -28,15 +28,13 @@ pipeline {
       }
     }
     stage('部署') {
-      withEnv(['JENKINS_NODE_COOKIE=dontkillme']) {
         steps {
           sh label: '', script: '''#!/bin/bash -ilex
           jps
-          nohup java -jar target/*.jar > springboot.log &
+          BUILD_ID=dontKillMe nohup java -jar target/*.jar > springboot.log &
           jps
           '''
         }
-      }
     }
   }
 }
