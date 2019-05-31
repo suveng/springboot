@@ -99,7 +99,7 @@
         </filter>
         <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则
         如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
-        的日志改名为今天的日期。即，<File> 的日志都是当天的。
+        的日志改名为今天的日期。即，<File> 的日志都是当天的。1
         -->
         <File>/data/logs/springboot/springbootLogger/info.log</File>
         <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
