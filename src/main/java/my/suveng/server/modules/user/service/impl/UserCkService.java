@@ -25,4 +25,8 @@ public class UserCkService {
     public List<UserCk> selectList() {
         return userCkMapper.selectList();
     }
+
+    //public int save(){
+    //
+    //}
 }

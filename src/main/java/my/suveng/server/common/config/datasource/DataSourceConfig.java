@@ -19,10 +19,10 @@ import java.util.Map;
 @Configuration
 @Slf4j
 public class DataSourceConfig {
+    //@Autowired
+    //private DruidDataSource clickHouseDataSource;
     @Autowired
-    private DruidDataSource clickHouseDataSource;
-    @Autowired
-    private DruidDataSource dataSource;
+    private DataSource dataSource;
     /**
      * 说明: 设置动态加载数据源
      * @author suwenguang
@@ -38,7 +38,7 @@ public class DataSourceConfig {
         //设置目标数据源列表
         Map<Object, Object> dataSourceMap = new HashMap<>(2);
         dataSourceMap.put(DataSourceKey.mysql, dataSource);
-        dataSourceMap.put(DataSourceKey.ck, clickHouseDataSource);
+        //dataSourceMap.put(DataSourceKey.ck, clickHouseDataSource);
         dynamicRoutingDataSource.setTargetDataSources(dataSourceMap);
         log.info("########多数据源就绪########");
         return dynamicRoutingDataSource;

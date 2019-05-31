@@ -73,4 +73,4 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bike?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://111.230.95.206:3306/system?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC
