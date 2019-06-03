@@ -14,13 +14,10 @@ jdk 1.8
 
 maven3
 
+jenkins
+
 ## Branch description
 
-base Branch is scaffolding integration
-
-develop branch is a development test branch of test integration
-
-Feature branch is a branch of some specific functions developed based on the base branch
 
 ## installation
 

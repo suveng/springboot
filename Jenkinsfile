@@ -15,9 +15,10 @@ pipeline {
         PID=$(netstat  -anop  | grep 9443 | awk -F ' ' '{print $7}' | awk -F '/' '{print $1}')
         echo "pid进程: $PID"
 
+        echo '判断pid是否存在'
         if [ -d /proc/$PID ];
         then
-            echo "$PID进程存在,继续执行"
+            echo "$PID进程存在,继续执行kill"
         else
             echo '$PID不存在,退出,-1'
             exit -1
@@ -35,7 +36,7 @@ pipeline {
         mvn clean
         mvn install -Dmaven.test.skip=true
         mvn package -Dmaven.test.skip=true
-        '''
+        '''n
       }
     }
     stage('测试') {
@@ -46,7 +47,6 @@ pipeline {
     stage('部署') {
         steps {
           sh label: '', script: '''#!/bin/bash -ile
-          jps
           mv target/*.jar /etc/xiaobo/suveng/app/springboot/
           JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /etc/xiaobo/suveng/app/springboot/*.jar >  /etc/xiaobo/suveng/log/springboot.log &
           echo $! > /etc/xiaobo/suveng/springboot.pid

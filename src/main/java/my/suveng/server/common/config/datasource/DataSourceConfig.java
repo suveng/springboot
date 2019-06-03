@@ -21,8 +21,10 @@ import java.util.Map;
 public class DataSourceConfig {
     //@Autowired
     //private DruidDataSource clickHouseDataSource;
+
     @Autowired
     private DataSource dataSource;
+
     /**
      * 说明: 设置动态加载数据源
      * @author suwenguang

@@ -14,13 +14,11 @@ jdk 1.8
 
 maven3
 
+jenkins
+
 ## 分支说明
 
-base 分支是脚手架集成
 
-develop 分支 是测试集成的一个开发测试分支
-
-feature 分支 是基于base分支开发的一些特定功能的分支
 
 ## 安装
 

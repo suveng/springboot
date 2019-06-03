@@ -16,4 +16,3 @@ public interface UserCkMapper {
 
     List<UserCk> selectList();
 }
-
