@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-git push origin master
-git push --force github master
+git push origin develop
+git push --force github develop
